@@ -5,7 +5,7 @@ var board = [[0,0,0,0],
 tile = addtiles(board)
 function transpose(a){
     return Object.keys(a[0]).map(function(c){
-return a.map(function(prob){return prob[c]});
+return a.map(function(prob){return prob[c];});
     });
 }
 function printArr(board){
@@ -36,23 +36,25 @@ function addtiles(){
 if(track.length==0){
    console.log("GAME ENDS HERE");
    process.exit();
-}
-  if(track.length>=16){
+}  if(track.length>=16){
      let spot1=random(track);
      let spot2 =random(track);
      let prob = Math.random(1);
      board[spot1.x][spot1.y]=prob > 0.9 ? 4:2;
      board[spot2.x][spot2.y]=prob > 0.9 ? 4:2;
-  }
-  return board;
 }
-printArr(tile);
+ return board
+    }
+
+printArr(tile)
+
+ 
 function slide(row){
-    let array=  row.filter(val=>val)
-     let missing = 4- array.length;
+    let arr=  row.filter(val=>val)
+     let missing = 4- arr.length;
      let zeroes = Array(missing).fill(0);
-     array=array.concat(zeroes);
-     return array;
+     arr=arr.concat(zeroes);
+     return arr;
 }
 function combine(row){
     for(i=3;i>=1;i--){
@@ -95,10 +97,28 @@ if(z=="left"){
     addtiles(tile);
     printArr(tile);  
 }
-         
-    }
-});
-}
-keyPressed();
   
- 
+   else if(z=="right"){
+            let row1= addrow(tile[0].reverse());
+            let row2= addrow(tile[1].reverse());
+            let row3= addrow(tile[2].reverse());
+            let row4= addrow(tile[3].reverse());
+            // console.log(row1);
+            tile[0]=row1.reverse();
+            tile[1]=row2.reverse();
+            tile[2]=row3.reverse();
+            tile[3]=row4.reverse();
+            addtiles(tile);
+            printArr(tile);  
+        
+         }  
+
+             }
+                    
+        
+            })
+        }
+       
+        
+keyPressed();
+    
