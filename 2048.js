@@ -118,10 +118,30 @@ if(z=="left"){
             printArr(tile);  
         
          }  
+         else if(z=="up"){
+        //   rtc will   transpose row to columm and  then it is addes to left  
+            rtc= transpose(tile);
+            let row1= addrow(rtc[0]);
+            let row2= addrow(rtc[1]);
+            let row3= addrow(rtc[2]);
+            let row4= addrow(rtc[3]);
+            // console.log(row1);
+            rtc[0]=row1;
+            rtc[1]=row2;
+            rtc[2]=row3;
+            rtc[3]=row4;
+            ctr = transpose(rtc);
+            tile[0] = ctr[0];
+            tile[1] = ctr[1];
+            tile[2] = ctr[2];
+            tile[3] = ctr[3];
+            addtiles(tile);
+            printArr(tile);  
+
 
              }
                     
-        
+            }
             })
         }
        
