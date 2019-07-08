@@ -116,7 +116,7 @@ if(z=="left"){
             tile[3]=row4.reverse();
             addtiles(tile);
             printArr(tile);  
-        
+        s
          }  
          else if(z=="up"){
         //   rtc will   transpose row to columm and  then it is addes to left  
@@ -140,7 +140,24 @@ if(z=="left"){
 
 
              }
-                    
+             else  if(z=="down"){
+                            rtc= transpose(tile);
+                            let row1= addrow(rtc[0].reverse());
+                            let row2= addrow(rtc[1].reverse());
+                            let row3= addrow(rtc[2].reverse());
+                            let row4= addrow(rtc[3].reverse());
+                            rtc[0]=row1.reverse();
+                            rtc[1]=row2.reverse();
+                            rtc[2]=row3.reverse();
+                            rtc[3]=row4.reverse();
+                            ctr = transpose(rtc);
+                            tile[0] = ctr[0];
+                            tile[1] = ctr[1];
+                            tile[2] = ctr[2];
+                            tile[3] = ctr[3];
+                            addtiles(tile)
+                            printArr(tile)
+             }
             }
             })
         }
