@@ -43,7 +43,13 @@ if(track.length==0){
      board[spot1.x][spot1.y]=prob > 0.9 ? 4:2;
      board[spot2.x][spot2.y]=prob > 0.9 ? 4:2;
 }
- return board
+else if (track.length>0&&track.length!=16){
+        let spot =random(track);
+        console.log(spot)
+        let prob = Math.random(1);
+        board[spot.x][spot.y]= prob>0.9 ? 4 :2;
+}
+ return board   
     }
 
 printArr(tile)
