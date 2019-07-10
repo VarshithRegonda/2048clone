@@ -116,7 +116,7 @@ if(z=="left"){
             tile[3]=row4.reverse();
             addtiles(tile);
             printArr(tile);  
-        s
+        
          }  
          else if(z=="up"){
         //   rtc will   transpose row to columm and  then it is addes to left  
