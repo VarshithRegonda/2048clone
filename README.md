@@ -1,4 +1,4 @@
-# 2048clone
+# 2048clone cmd
 2048  commendline interactive based game  
 stdin is used for arrow keys 
 got to terminal run node 2048.js
